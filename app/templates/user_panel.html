@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Panel</title>
+</head>
+<body>
+    <h1>Информация о пользователе</h1>
+    <div class="user-info">
+        <p>ID пользователя: {{ user['user_id'] }}</p>
+        <p>Почта: {{ user['email'] }}</p>
+        <p>Полное имя: {{ user['full_name'] }}</p>
+    </div>
+
+    <h2>Счета</h2>
+    <div class="accounts">
+        {% for account in accounts %}
+        <div class="account">
+            <p>Номер счета: {{ account.account_id }}</p>
+            <p>Баланс: ₽{{ account.balance }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Транзакции</h2>
+    <div class="transactions">
+        {% for transaction in transactions %}
+        <div class="transaction">
+            <p>Номер транзакции: {{ transaction.transaction_id }}</p>
+            <p>Номер счета: {{ transaction.account_id }}</p>
+            <p>Размер транзакции: ₽{{ transaction.amount }}</p>
+            <p>Подпись: {{ transaction.signature }}</p>
+        </div> <br>
+        {% endfor %}
+    </div>
+</body>
+</html>

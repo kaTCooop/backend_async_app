@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<p>user_id: {{ user['user_id'] }} <br>
+email: {{ user['email'] }} <br>
+full_name: {{ user['full_name'] }} <br></p>
+
+<p class="form_add_block_head_text">Добавить пользователя</p>
+<form class="form_add_style" action = "/admin_action" method="post">
+<input type="text" name="user_id" placeholder="Введите id" required>
+<label>user_id пользователя</label> <br>
+<input type="email" name="email" placeholder="Введите email" required>
+<label>email пользователя</label> <br>
+<input type="text" name="full_name" placeholder="Введите имя" required>
+<label>full_name пользователя</label> <br>
+<input type="text" name="password" placeholder="Введите пароль" required>
+<label>password пользователя</label> <br>
+<input type="text" name="user_type" placeholder="Введите 0 или 1" required>
+<label>user_type пользователя: 0 - обычный, 1 - администратор</label> <input type="hidden" name="add_user_submit" value=1> <br><br>
+<button class="add_user_button" type="submit" name="add_user_submit">Создать / Обновить</button> <br>
+</form>
+
+<p class="form_delete_block_head_text">Удалить пользователя</p>
+<form class="form_delete_style" action = "/admin_action" method="post">
+<input type="text" name="user_id" placeholder="Введите id" required>
+<label>user_id пользователя</label> <input type="hidden" name="delete_user_submit"> <br><br>
+<button class="delete_user_button" type="submit" name="delete_user_submit" value=1>Удалить</button> <br>
+</form>
+
+<form class="form_list_users_style" action = "/admin_action" method="post">
+<input type="hidden" name="list_users_submit" value=1>
+<p class="form_list_users_block_head_text">Вывести список пользователей</p>
+<button class="list_users_button" type="submit" name="list_users_submit">Получить список</button> <br>
+</form>
+
+<p class="form_get_accounts_block_head_text">Вывести счета пользователя</p>
+<form class="form_get_accounts_style" action = "/admin_action" method="post">
+<input type="text" name="user_id" placeholder="Введите id" required>
+<label>user_id пользователя</label> <input type="hidden" name="get_accounts_submit" value=1> <br><br>
+<button class="get_accounts_button" type="submit" name="get_accounts_submit">Перейти</button> <br>
+</form>
+
+<p class="form_get_transactions_block_head_text">Вывести транзакции по счету пользователя</p>
+<form class="form_get_transactions_style" action = "/admin_action" method="post">
+<input type="text" name="account_id" placeholder="Введите id счета" required>
+<label>account_id</label> <input type="hidden" name="get_transactions_submit" value=1> <br><br>
+<button class="get_transactions_button" type="submit" name="get_transactions_submit">Перейти</button> <br>
+</form>
+</html>
