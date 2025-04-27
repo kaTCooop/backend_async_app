@@ -9,12 +9,12 @@ from sanic_jinja2 import SanicJinja2
 from sqlalchemy import select
 from sqlalchemy.orm import sessionmaker
 
-from database import create_db_and_tables
+from database import create_engine_and_tables
 from models import Base, UserBase, AccountBase, TransactionBase
 from app_config import admin_password, admin_cookie, secret_key
 
 
-conn, meta = create_db_and_tables()
+conn, meta = create_engine_and_tables()
 app = Sanic('async_app')
 jinja = SanicJinja2(app, pkg_name="main")
 
