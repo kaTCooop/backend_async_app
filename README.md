@@ -6,7 +6,7 @@
 1. python 3.9+
 2. pip install sanic sqlalchemy sanic_jinja2 psycopg2
 
-Устанавливаем переменную с ссылкой на созданную пустую базу данных postgreSQL, в которую будем вносить изменения 
+Устанавливаем переменную с ссылкой на созданную пустую базу данных postgreSQL, в которую будем вносить изменения  
 (powershell)  
 3. $env:DB_URL = "postgresql+psycopg2://user:password@host:port/database.db"  
 (bash)  
