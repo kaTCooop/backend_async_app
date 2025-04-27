@@ -8,7 +8,6 @@ from sanic_jinja2 import SanicJinja2
 from sqlalchemy import select
 
 from database import create_engine_and_tables
-from models import Base, UserBase, AccountBase, TransactionBase
 from app_config import admin_password, admin_cookie, secret_key
 
 
