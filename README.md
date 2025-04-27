@@ -8,9 +8,11 @@
 
 Устанавливаем переменную с ссылкой на созданную пустую базу данных postgreSQL, в которую будем вносить изменения  
 (powershell)  
-3. $env:DB_URL = "postgresql+psycopg2://user:password@host:port/database.db"  
+3. $env:DB_URL = "postgresql+psycopg2://user:password@localhost:port/database.db"  
 (bash)  
-3. export DB_URL = "postgresql+psycopg2://user:password@host:port/database.db"  
+3. export DB_URL = "postgresql+psycopg2://user:password@localhost:port/database.db"  
+  
+Например postgresql+psycopg2://postgres:postgres@localhost:5432/async_app.db  
   
 4. cd project_folder/app  
 5. python main.py  
