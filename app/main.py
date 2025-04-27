@@ -2,8 +2,7 @@ from functools import wraps
 from hashlib import sha256
 
 from sanic import Sanic
-from sanic.response import json
-from sanic.response import html
+from sanic.response import json, html
 from sanic_jinja2 import SanicJinja2
 
 from sqlalchemy import select
