@@ -1,7 +1,9 @@
 # Инструкция по запуску с docker-compose  
 1. cd project_folder  
 2. docker-compose up  
-
+  
+Сайт доступен по http://0.0.0.0:8000  
+  
 # Инструкция по запуску без docker-compose
 1. python 3.9+
 2. pip install sanic sqlalchemy sanic_jinja2 psycopg2
@@ -15,7 +17,9 @@
 Например postgresql+psycopg2://postgres:postgres@localhost:5432/async_app.db  
   
 4. cd project_folder/app  
-5. python main.py  
+5. python main.py
+  
+Сайт доступен по http://0.0.0.0:8000  
   
 # Данные тестовых пользователей
 email: test@test.ru; password: uHaE!DK  
