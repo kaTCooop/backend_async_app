@@ -28,4 +28,4 @@ email: admin@test.ru; password: fVQvB
 # Секретный ключ
 m+IOXLQe|Kg)1I2M4(4-]iK%f|0#DN)P9  
   
-# Route для платежной системы http://0.0.0.0:8000/payment  
+Route для платежной системы http://0.0.0.0:8000/payment  
