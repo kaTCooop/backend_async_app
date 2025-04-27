@@ -6,7 +6,6 @@ from sanic.response import json, html
 from sanic_jinja2 import SanicJinja2
 
 from sqlalchemy import select
-from sqlalchemy.orm import sessionmaker
 
 from database import create_engine_and_tables
 from models import Base, UserBase, AccountBase, TransactionBase
