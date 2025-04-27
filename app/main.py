@@ -73,6 +73,7 @@ async def login(request, user=None):
 
         return response
 
+    # user panel
     accounts = meta.tables['accounts']
     query = select(accounts).where(accounts.c.user_id == user['user_id']).order_by(accounts.c.account_id)
     accounts_output = conn.execute(query).mappings().all()
