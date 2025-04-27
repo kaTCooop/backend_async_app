@@ -73,9 +73,6 @@ async def login(request, user=None):
 
         return response
 
-    # user response
-    response = {'user_id': user['user_id'], 'email': user['email'], 'full_name': user['full_name']}
-
     accounts = meta.tables['accounts']
     query = select(accounts).where(accounts.c.user_id == user['user_id']).order_by(accounts.c.account_id)
     accounts_output = conn.execute(query).mappings().all()
