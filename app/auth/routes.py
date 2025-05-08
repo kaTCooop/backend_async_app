@@ -29,6 +29,7 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
 
 @router.post("/signup", response_model=UserResponse, include_in_schema=False)
 def signup(user: UserCreate, db: Session = Depends(get_db)):
+    # Функция по сути не используется, но может быть использована для самостоятельной регистрации пользователя, без администратора
     db_user = get_user(db, username=user.email)
     if db_user:
         raise HTTPException(status_code=400, detail="username already registered")
