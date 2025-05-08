@@ -20,7 +20,7 @@ def get_password_hash(password):
 
 def create_user(user: UserBase, session) -> None:
     try:
-	    session.add(user)
+	session.add(user)
     except:
         session.rollback()
     else:
@@ -29,7 +29,7 @@ def create_user(user: UserBase, session) -> None:
 
 def create_account(account: AccountBase, session) -> None:
     try:
-	    session.add(account)
+	session.add(account)
     except:
         session.rollback()
     else:
