@@ -7,7 +7,7 @@ RUN apt install -y libpq-dev python3-dev
 
 WORKDIR /app
 
-RUN apt install -y ubuntu-mate-desktop^ net-tools python3-pip python3-tk uvicorn
+RUN apt install -y ubuntu-mate-desktop^ net-tools python3-pip uvicorn
 RUN pip install fastapi sqlalchemy psycopg2 pydantic python-jose passlib[bcrypt]
 
 CMD ["python", "-m", "app.main"]
