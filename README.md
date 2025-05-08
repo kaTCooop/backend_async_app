@@ -1,7 +1,8 @@
 # Инструкция по запуску с docker-compose  
 1. cd project_folder  
 2. docker-compose up  
-  
+
+Ожидание 5-10 минут  
 Swagger доступен по http://localhost:8000/docs#/  
   
 # Инструкция по запуску без docker-compose
