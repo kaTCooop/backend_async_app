@@ -7,9 +7,9 @@ Swagger доступен по http://localhost:8000/docs#/
   
 # Инструкция по запуску без docker-compose
 1. python 3.12+
-2. pip install fastapi sqlalchemy psycopg2 pydantic python-jose passlib[bcrypt]  
+2. pip install fastapi sqlalchemy psycopg2-binary pydantic python-jose passlib python-multipart  
 
-(Если не получатеся psycopg2, то попробуйте pip install psycopg2-binary)
+(Если не получатеся psycopg2-binary, то попробуйте pip install psycopg2)
 
 3. sudo apt install -y uvicorn  
 Установка ASGI приложения
