@@ -12,4 +12,4 @@ def create_engine_and_tables():
     Base.metadata.create_all(engine)
     create_default_objects(engine)
     conn = engine.connect()
-    return conn, Base.metadata
+    return engine, conn, Base.metadata
