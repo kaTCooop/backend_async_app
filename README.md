@@ -11,16 +11,19 @@ Swagger доступен по http://localhost:8000/docs#/
 
 (Если не получатеся psycopg2, то попробуйте pip install psycopg2-binary)
 
+3. sudo apt install -y uvicorn  
+Установка ASGI приложения
+
 Устанавливаем переменную с ссылкой на созданную пустую базу данных postgreSQL, в которую будем вносить изменения  
 (powershell)  
-3. $env:DB_URL = "postgresql+psycopg2://user:password@localhost:port/database.db"  
+4. $env:DB_URL = "postgresql+psycopg2://user:password@localhost:port/database.db"  
 (bash)  
-3. export DB_URL = "postgresql+psycopg2://user:password@localhost:port/database.db"  
+4. export DB_URL = "postgresql+psycopg2://user:password@localhost:port/database.db"  
   
 Например postgresql+psycopg2://postgres:postgres@localhost:5432/async_app.db  
   
-4. cd project_folder/app  
-5. python main.py
+5. cd project_folder/app  
+6. uvicorn main:app  
   
 Swagger доступен по http://localhost:8000/docs#/  
   
