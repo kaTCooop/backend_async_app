@@ -25,11 +25,11 @@ Swagger доступен по http://localhost:8000/docs#/
 email: test@test.ru; password: uHaE!DK  
 email: admin@test.ru; password: fVQvB  
 
+# Секретный ключ для кодирования паролей
+3Dtk6u1PFRNsKri5cQpn8EdqwGG+66JpUCl7oF0i76P+lvgfx1LVp/a0Jh8TSvzJ  
+
 # Секретный ключ для оплаты
 m+IOXLQe|Kg)1I2M4(4-]iK%f|0#DN)P9  
-
-# Секретный ключ для кодирования паролей
-3Dtk6u1PFRNsKri5cQpn8EdqwGG+66JpUCl7oF0i76P+lvgfx1LVp/a0Jh8TSvzJ
 
 Можно изменить в app_config.py  
   
