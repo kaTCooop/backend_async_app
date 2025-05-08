@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from sqlalchemy import select
 
 from core import app, conn, meta
-from app_config import admin_password, admin_cookie, secret_key
+from app_config import admin_password, admin_cookie, payment_secret_key
 from auth.dependencies import get_current_user, get_db, get_current_admin
 from auth.routes import router as auth_router
 from models import UserBase, Payment, User
@@ -125,7 +125,7 @@ def get_transactions_of_account(account_id: int, admin: UserBase = Depends(get_c
 
 @app.post("/payment", tags=['payment'])
 def generate_payment(payment: Payment) -> Union[Payment, dict]:
-    test_signature = sha256((str(payment.account_id) + str(payment.amount) + payment.transaction_id + str(payment.user_id) + secret_key).encode())
+    test_signature = sha256((str(payment.account_id) + str(payment.amount) + payment.transaction_id + str(payment.user_id) + payment_secret_key).encode())
 
     if allow_empty_signature and payment.signature == '':
         payment.signature = test_signature.hexdigest()

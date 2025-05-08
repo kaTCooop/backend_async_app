@@ -2,13 +2,13 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import IntegrityError
 
 from models import UserBase, AccountBase, TransactionBase
-from app_config import admin_password
+from app_config import admin_password, password_secret_key
 
 from passlib.context import CryptContext
 from jose import JWTError, jwt
 
 
-SECRET_KEY = "your_secret_key"
+SECRET_KEY = password_secret_key
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

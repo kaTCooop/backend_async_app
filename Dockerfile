@@ -8,6 +8,6 @@ RUN apt install -y libpq-dev python3-dev
 WORKDIR /app
 
 RUN pip install --upgrade pip
-RUN pip install sanic sqlalchemy sanic_jinja2 psycopg2
+RUN pip install fastapi sqlalchemy psycopg2 pydantic jose passlib[bcrypt]
 
 CMD ["python", "-m", "app.main"]
