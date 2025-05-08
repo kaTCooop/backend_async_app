@@ -1,13 +1,16 @@
-FROM python:3.12
+FROM ubuntu
 
 RUN apt update
-RUN apt-get -y install build-essential libssl-dev libffi-dev libblas3 libc6 liblapack3 gcc python3-dev python3-pip cython3
-RUN apt install netcat-traditional
-RUN apt install -y libpq-dev python3-dev
+RUN apt install -y netcat-openbsd
 
 WORKDIR /app
 
-RUN apt install -y ubuntu-mate-desktop^ net-tools python3-pip uvicorn
-RUN pip install fastapi sqlalchemy psycopg2 pydantic python-jose passlib[bcrypt]
+RUN apt install -y python3-venv
+RUN python3 -m venv .venv
+RUN . .venv/bin/activate
 
-CMD ["python", "-m", "app.main"]
+RUN apt install -y python3-pip
+
+RUN python3 -m pip install --break-system-packages uvicorn
+RUN python3 -m pip install --break-system-packages "fastapi[all]"
+RUN python3 -m pip install --break-system-packages sqlalchemy psycopg2-binary pydantic python-jose passlib python-multipart
