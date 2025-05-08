@@ -2,11 +2,11 @@
 1. cd project_folder  
 2. docker-compose up  
   
-Сайт доступен по http://localhost:8000  
+Swagger доступен по http://localhost:8000/docs#/  
   
 # Инструкция по запуску без docker-compose
 1. python 3.9+
-2. pip install sanic sqlalchemy sanic_jinja2 psycopg2
+2. pip install fastapi sqlalchemy psycopg2 pydantic jose passlib[bcrypt]  
 
 Устанавливаем переменную с ссылкой на созданную пустую базу данных postgreSQL, в которую будем вносить изменения  
 (powershell)  
@@ -19,13 +19,18 @@
 4. cd project_folder/app  
 5. python main.py
   
-Сайт доступен по http://localhost:8000  
+Swagger доступен по http://localhost:8000/docs#/  
   
 # Данные тестовых пользователей
 email: test@test.ru; password: uHaE!DK  
 email: admin@test.ru; password: fVQvB  
 
-# Секретный ключ
+# Секретный ключ для оплаты
 m+IOXLQe|Kg)1I2M4(4-]iK%f|0#DN)P9  
+
+# Секретный ключ для кодирования паролей
+3Dtk6u1PFRNsKri5cQpn8EdqwGG+66JpUCl7oF0i76P+lvgfx1LVp/a0Jh8TSvzJ
+
+Можно изменить в app_config.py  
   
 Route для платежной системы http://localhost:8000/payment  
