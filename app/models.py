@@ -50,7 +50,7 @@ class Payment(BaseModel):
 	transaction_id: str
 	user_id: Annotated[int, Field(le=2147483647, ge=0, strict=True, repr=True, serialization_alias='integer'), WithJsonSchema({'user_id': 'integer', 'examples': [1, 100, 250]})]
 	account_id: Annotated[int, Field(le=2147483647, ge=0, strict=True, repr=True, serialization_alias='integer'), WithJsonSchema({'account_id': 'integer', 'examples': [3048, 997]})]
-	amount: Annotated[int, Field(le=2147483647, ge=1, strict=True, repr=True, serialization_alias='integer'), WithJsonSchema({'amount': 'integer', 'examples': [1, 200, 1000, 10000]})]
+	amount: Annotated[int, Field(le=9223372036854775807, ge=1, strict=True, repr=True, serialization_alias='integer'), WithJsonSchema({'amount': 'integer', 'examples': [1, 200, 1000, 10000]})]
 	signature: str = ''
 
 
