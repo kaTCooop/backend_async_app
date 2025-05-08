@@ -6,7 +6,7 @@ Swagger доступен по http://localhost:8000/docs#/
   
 # Инструкция по запуску без docker-compose
 1. python 3.12+
-2. pip install fastapi sqlalchemy psycopg2-binary pydantic python-jose passlib python-multipart  
+2. pip install fastapi sqlalchemy psycopg2-binary pydantic python-multipart python-jose passlib
 
 (Если не получатеся psycopg2-binary, то попробуйте pip install psycopg2)
 
