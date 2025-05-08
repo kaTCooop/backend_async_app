@@ -6,7 +6,7 @@ Swagger доступен по http://localhost:8000/docs#/
   
 # Инструкция по запуску без docker-compose
 1. python 3.9+
-2. pip install fastapi sqlalchemy psycopg2 pydantic jose passlib[bcrypt]  
+2. pip install fastapi sqlalchemy psycopg2 pydantic python-jose passlib[bcrypt]  
 
 Устанавливаем переменную с ссылкой на созданную пустую базу данных postgreSQL, в которую будем вносить изменения  
 (powershell)  
