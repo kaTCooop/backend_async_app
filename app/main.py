@@ -148,7 +148,6 @@ def generate_payment(payment: Payment) -> Union[Payment, dict]:
         if user_output[0]['user_type'] != 0:
             raise HTTPException(status_code=400, detail='Invalid user type. Must be regular user')
 
-    accounts = meta.tables['accounts']
     query = select(accounts).where(accounts.c.account_id == payment.account_id, accounts.c.user_id == payment.user_id)
     accounts_output = conn.execute(query).mappings().all()
 
