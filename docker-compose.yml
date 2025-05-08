@@ -11,8 +11,8 @@ services:
       - "0.0.0.0:5432:5432"
 
   web:
-    build: .
-    command: sh -c "while ! nc -z db 5432; do sleep 1; done && uvicorn main:app"
+    image: restful_async_app-main-web:latest
+    command: sh -c "while ! nc -z db 5432; do sleep 1; done && uvicorn main:app --host 0.0.0.0 --port 8000"
     volumes:
     - ./app:/app
     ports:
